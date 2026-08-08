@@ -1,0 +1,32 @@
+generated: '2026-08-06'
+method: searched
+source: https://status.assemblyosm.com/
+scope: >-
+  Assembly OSM publishes no API, so there is no API versioning, deprecation or SLA policy
+  to capture. The one operational-transparency surface the company does publish is a status
+  page, recorded here.
+status_page:
+  url: https://status.assemblyosm.com/
+  provider: Better Stack
+  http_status: 200
+  components:
+  - name: assemblyosm.com
+    group: Applications
+    state: Operational
+    uptime: 100%
+  sections:
+  - Status
+  - Maintenance
+  - Previous incidents
+  note: >-
+    Monitors the corporate marketing website only. No API, application, or platform
+    component is listed on the page.
+versioning: null
+deprecation: null
+sla: null
+changelog: null
+x-evidence:
+  fetched: '2026-08-06'
+  url: https://status.assemblyosm.com/
+  http_status: 200
+  content_type: text/html; charset=utf-8

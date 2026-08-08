@@ -1,0 +1,31 @@
+generated: '2026-08-06'
+method: probed
+source: live HTTP probes of https://www.assemblyosm.com/.well-known/*
+host: https://www.assemblyosm.com
+note: >-
+  No /.well-known/ document is published. Webflow answers every /.well-known/* path with
+  an HTTP 404 carrying the 88-byte body "Invalid .well-known request", so this is a real
+  absence rather than a soft-404 or an SPA catch-all. Recorded so later rounds do not
+  re-litigate the probe. NO `WellKnown` pointer is wired in apis.yml — nothing was found,
+  and the artifact exists only as evidence of the miss.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/agent-card.json
+  status: 404
+- path: /.well-known/agent.json
+  status: 404
+x-evidence:
+  fetched: '2026-08-06'
+  control: >-
+    https://status.assemblyosm.com/.well-known/agent-card.json returns HTTP 200 with the
+    identical 476,499-byte Better Stack single-page-app shell served at that host's root,
+    and is therefore an SPA catch-all false positive, not an agent card. Rejected.

@@ -1,0 +1,54 @@
+# Assembly OSM
+
+> Assembly OSM is a New York City off-site manufacturing company founded in 2019 by SHoP Architects co-founders Bill and Chris Sharples. It industrialises high-rise urban housing with a "post-modular" kit-of-parts chassis fabricated across a distributed supplier network and stacked on site, targeting market-competitive high-rise residential delivery in roughly 60% of conventional schedule. Assembly OSM sells buildings, not software: it publishes no developer program, no public API, no SDK, and no machine-readable API contract.
+
+generated: 2026-08-06
+method: generated
+source: apis.yml + live probes of assemblyosm.com (API Evangelist enrichment pipeline)
+
+## About
+
+- [Assembly OSM](https://www.assemblyosm.com/): Corporate site — making urban development scalable and sustainable.
+- [Technology](https://www.assemblyosm.com/technology): The post-modular delivery model and distributed fabrication supply chain.
+- [Sustainability](https://www.assemblyosm.com/sustainability): All-electric, passive-design buildings; net-zero operational carbon by 2027, climate positive by 2040.
+- [Buildings](https://www.assemblyosm.com/buildings): Prototype Alpha, 147 St. Felix, 247 E 117th Street.
+- [AOSM Canada](https://www.assemblyosm.com/aosm-canada/aosm-canada): Canadian operation.
+- [Build With Us](https://www.assemblyosm.com/build-with-us-page): Project intake form for developers, owners and partners.
+
+## Operations
+
+- [Status page](https://status.assemblyosm.com/): Better Stack status page. Monitors the corporate website only — no API or application component is listed.
+
+## People
+
+- [Careers](https://careers.assemblyosm.com/): Teamtailor career site — architectural design & innovation, construction, digital delivery, manufacturing engineering, product design engineering, supply chain.
+- [Team](https://careers.assemblyosm.com/people)
+- [Data & Privacy](https://careers.assemblyosm.com/data-privacy): Candidate privacy notice.
+- [Cookie Policy](https://careers.assemblyosm.com/cookie-policy)
+
+## Code
+
+- [GitHub organization](https://github.com/assemblyosm): Exists since 2019-11-12 with contact dev@assemblyosm.com, but publishes zero public repositories and zero gists.
+
+## Social
+
+- [LinkedIn](https://www.linkedin.com/company/assemblyosm/)
+- [X](https://x.com/assemblyosm)
+- [Instagram](https://www.instagram.com/assemblyosm/)
+
+## API surface
+
+There is none. As of 2026-08-06:
+
+- No OpenAPI, Swagger, GraphQL SDL, AsyncAPI, Postman collection or JSON Schema is published anywhere on assemblyosm.com. `/openapi.json`, `/swagger.json`, `/api-docs`, `/docs` and `/llms.txt` all return HTTP 404 from Webflow.
+- Every `/.well-known/*` path returns HTTP 404 with the body "Invalid .well-known request" — no security.txt, no OIDC/OAuth discovery, no api-catalog, no ai-plugin, no A2A agent card.
+- assemblyosm.com carries a wildcard DNS record, so `api.`, `docs.`, `developer.`, `portal.` and `mcp.` all resolve — and all return the same Cloudflare "DNS points to prohibited IP" 403 as a nonsense control subdomain. None of them is a real host.
+- No first-party client library exists on npm, PyPI, RubyGems, crates.io or Packagist.
+- The company's digital-twin platform is a scripted CATIA environment used internally to carry each module from design through fabrication to installation. It is a manufacturing tool, not a product, and has no external interface.
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/assembly-osm/refs/heads/main/apis.yml)
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/assembly-osm/refs/heads/main/security/assembly-osm-domain-security.yml)
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/assembly-osm/refs/heads/main/lifecycle/assembly-osm-lifecycle.yml)
+- [Well-known probe record](https://raw.githubusercontent.com/api-evangelist/assembly-osm/refs/heads/main/well-known/assembly-osm-well-known.yml)
