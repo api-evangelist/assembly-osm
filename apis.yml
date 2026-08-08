@@ -1,17 +1,48 @@
 aid: assembly-osm
-name: Assembly Osm
-description: 'Assembly Osm is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: Assembly OSM
+image: https://cdn.prod.website-files.com/67642e56febbc72785406810/67642e56febbc727854068a1_LOGO_Web256x256.png
+description: >-
+  Assembly OSM is a New York City off-site manufacturing company founded in 2019 by SHoP
+  Architects co-founders Bill and Chris Sharples to industrialise the construction of
+  high-rise urban housing. The company calls its method "post-modular": rather than
+  trucking finished volumetric boxes from a single factory, Assembly designs a
+  kit-of-parts chassis and distributes fabrication across a network of specialist
+  suppliers — an aerospace and automotive supply-chain model applied to buildings — then
+  stacks the resulting units on site, claiming delivery of market-competitive high-rise
+  residential architecture in roughly 60% of conventional schedule. Its buildings are
+  all-electric and passive-design led, targeting 55-70% energy-efficiency improvement and
+  35% less embodied carbon today, net-zero operational carbon by 2027 and climate-positive
+  buildings by 2040. Completed and in-progress work includes Prototype Alpha, 147 St.
+  Felix Street and 247 East 117th Street in New York, plus an AOSM Canada operation. The
+  company has raised more than $60 million, including a $38 million Series A in 2022, and
+  draws engineering staff from SpaceX, Tesla and Boeing. Assembly runs a digital-twin
+  engineering platform — a heavily scripted CATIA environment carrying each module from
+  design through fabrication to installation — but that platform is an internal
+  manufacturing tool, not a product: Assembly OSM sells buildings, and publishes no
+  developer program, no public API, no SDK and no machine-readable API contract of any
+  kind.
 url: https://raw.githubusercontent.com/api-evangelist/assembly-osm/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profile
+x-tier-reason: no-api-surface
 specificationVersion: '0.20'
 created: '2026-08-06'
 modified: '2026-08-06'
 tags:
 - Company
+- Construction
+- Modular Construction
+- Off-Site Manufacturing
+- Prefabrication
+- Real Estate
+- Housing
+- Architecture
+- Digital Twin
+- Sustainability
+- Climate Tech
+- Manufacturing
+- New York
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +50,79 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/assembly-osm-domain-security.yml
 - type: Website
+  url: https://www.assemblyosm.com/
+- type: Technology
+  url: https://www.assemblyosm.com/technology
+- type: Sustainability
+  url: https://www.assemblyosm.com/sustainability
+- type: Projects
+  url: https://www.assemblyosm.com/buildings
+- type: Contact
+  url: https://www.assemblyosm.com/build-with-us-page
+- type: Careers
+  url: https://careers.assemblyosm.com/
+- type: Team
+  url: https://careers.assemblyosm.com/people
+- type: StatusPage
+  url: https://status.assemblyosm.com/
+  description: Public Better Stack status page for assemblyosm.com. It monitors the
+    corporate website only; no API or application service is listed.
+- type: GitHubOrganization
+  url: https://github.com/assemblyosm
+  description: Organization exists (created 2019-11-12, contact dev@assemblyosm.com)
+    but publishes zero public repositories and zero gists.
+- type: PrivacyPolicy
+  url: https://careers.assemblyosm.com/data-privacy
+  description: Assembly OSM privacy notice published on the careers site; scoped to
+    candidate personal data. No privacy policy is published on the corporate site.
+- type: CookiePolicy
+  url: https://careers.assemblyosm.com/cookie-policy
+- type: LinkedIn
+  url: https://www.linkedin.com/company/assemblyosm/
+- type: Twitter
+  url: https://x.com/assemblyosm
+- type: Instagram
+  url: https://www.instagram.com/assemblyosm/
+- type: SecondaryMarket
   url: https://www.hiive.com/securities/assembly-osm-stock
+- type: Lifecycle
+  url: lifecycle/assembly-osm-lifecycle.yml
+- type: LLMsTxt
+  url: llms/assembly-osm-llms.txt
+x-enrichment:
+  date: '2026-08-06'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Assembly OSM manufactures and stacks high-rise apartment buildings — its digital twin
+    is a scripted CATIA environment used internally to drive its own fabrication line, not
+    a product with an interface — so assemblyosm.com is an eleven-page Webflow marketing
+    site where every spec path 404s, every /.well-known/* path returns "Invalid
+    .well-known request", and the api./docs./developer./mcp. hosts that appear to resolve
+    are a wildcard DNS record answering with the same Cloudflare 403 as a nonsense control
+    subdomain.
+  evidence:
+  - url: https://www.assemblyosm.com/openapi.json
+    status: 404
+  - url: https://www.assemblyosm.com/llms.txt
+    status: 404
+  - url: https://www.assemblyosm.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.assemblyosm.com/.well-known/security.txt
+    status: 404
+  - url: https://api.assemblyosm.com/
+    status: 403
+  - url: https://zzz-nonsense-control.assemblyosm.com/
+    status: 403
+  - url: https://api.github.com/orgs/assemblyosm/repos
+    status: 200
+  - url: https://status.assemblyosm.com/
+    status: 200
+  checked: '2026-08-06'
