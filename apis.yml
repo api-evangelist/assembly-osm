@@ -1,5 +1,16 @@
 aid: assembly-osm
 name: Assembly OSM
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/67642e56febbc72785406810/67642e56febbc727854068a1_LOGO_Web256x256.png
 description: >-
   Assembly OSM is a New York City off-site manufacturing company founded in 2019 by SHoP
