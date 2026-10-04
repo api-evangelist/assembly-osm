@@ -58,7 +58,7 @@ tags:
 - Modular Construction
 - Off-Site Manufacturing
 - Prefabrication
-- Real-Estate
+- Real Estate
 - Housing
 - Architecture
 - Digital Twin
@@ -80,6 +80,7 @@ tags_raw:
 - Climate Tech
 - Manufacturing
 - New York
+- Real-Estate
 apis: []
 maintainers:
 - FN: Kin Lane
